@@ -44,11 +44,17 @@ public class EchoServer
       String line = "";
 
       while ((inputLine = in.readLine()) != null){ 
-         while((line = reader.readLine()) != null){
-            out.println(line + "\n S");
+         if(inputLine.equals("password")){
+            while((line = reader.readLine()) != null){
+               out.println(line + "\n S");
+            }
          }
-         System.out.println ("Server: " + inputLine); 
-         out.println(hostName + " says " + inputLine); 
+         else{
+            out.println("Invalid password");
+            out.close(); 
+            in.close(); 
+            clientSocket.close();
+         }
 
          if (inputLine.startsWith("Bye.")) break; 
       } 

@@ -51,12 +51,8 @@ export const main = async () => {
       key: KEY,
     });
 
-    console.log("Presigned URL without client");
     console.log(noClientUrl);
-    console.log("\n");
-
-    console.log("Presigned URL with client");
-    console.log(clientUrl);
+    //console.log(clientUrl);
   } catch (err) {
     console.error(err);
   }

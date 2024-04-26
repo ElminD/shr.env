@@ -5,7 +5,7 @@ import java.net.*;
 public class EchoClient {
     public static void main(String[] args) throws IOException {
 
-        String serverHostname = new String ("127.0.0.1");
+        String serverHostname = new String ("ec2-54-234-15-175.compute-1.amazonaws.com");
 
         if (args.length > 0)
            serverHostname = args[0];
@@ -36,9 +36,8 @@ public class EchoClient {
 	   System.out.print ("Password: ");
            while ((userInput = stdIn.readLine()) != null) {
             out.println(userInput);
+            System.out.println(in.readLine());
            }
-            System.out.println("echo: " + in.readLine());
-            System.out.print ("input: ");
     } 		
 	catch(Exception e){
 	}
